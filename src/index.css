@@ -1,13 +1,165 @@
-body {
+html, body {
   margin: 0;
+}
+
+body {
+  padding: 0 150px 0 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  background-image: url(./assets/background.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#root {
+  height: 100%;
+  position: relative;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* CONTAINER */
+
+.__container {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* WALLET */
+
+.wallet__container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 25px;
+  margin-top: 55px;
+}
+
+.wallet__button {
+  width: 150px;
+}
+
+.wallet__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.wallet__text {
+  position: absolute;
+  z-index: 1;
+  bottom: 7.5px;
+}
+
+/* SOCIAL NETWORKS */
+
+.rrss__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -45px;
+}
+
+.__rrss {
+  width: 90px;
+}
+
+/* TITLE */
+
+.title__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.__title {
+  width: 420px;
+}
+
+/* COUNTER CONTAINER */
+
+.counter__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+
+.item__counter {
+  height: 100px;
+}
+
+.__minus, .__plus {
+  height: 45px;
+  align-self: flex-end;
+  padding-bottom: 10px;
+}
+
+.__minus {
+  margin-right: 15px;
+}
+
+.__plus {
+  margin-left: 15px;
+}
+
+.number__box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.counter__text {
+  position: absolute;
+  bottom: 20px;
+}
+
+/* MINT */
+
+.mint__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.mint__button {
+  width: 190px;
+  position: absolute;
+  align-self: flex-start;
+  top: -35px;
+}
+
+.mint__info {
+  width: 300px;
+}
+
+/* HONOR */
+
+.honor__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* ACTIONABLES */
+
+.wallet__button, .__rrss, .__minus, .__plus, .mint__button {
+  cursor: pointer;
+  z-index: 1;
 }
