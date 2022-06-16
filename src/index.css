@@ -15,6 +15,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  overflow-x: hidden;
 }
 
 #root {
@@ -189,5 +190,16 @@ code {
 
   .__container {
     position: unset;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  body {
+    padding: 0 10px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
