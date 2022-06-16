@@ -10,6 +10,7 @@ import infoImage from "./assets/mint-info.svg";
 import honorImage from "./assets/honor-text.svg";
 import walletImage from "./assets/wallet.svg";
 import soldoutImage from "./assets/sold-out.svg";
+import soonImage from "./assets/soon.svg";
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from "./utils/constants/contracts";
@@ -144,7 +145,7 @@ const App = (props) => {
         alert('Congratulations! Forgotten Dog Minted, you can now see your Forgotten Dog on Opensea.');
         getMyBalance();
       } else if (!canMint) {
-        alert('Mint has not started yet!');
+        alert(currentAccount ? 'Mint has not started yet!' : 'Wallet is not connected');
       } else if (balance === 20) {
         alert('Max NFTs per holder reached!');
       }
@@ -182,7 +183,7 @@ const App = (props) => {
   return (
     <div className="__container">
       <div className="wallet__container">
-        {
+        { !canMint && currentAccount ? null :
           currentAccount ?
           <div className="wallet__wrapper">
             <img className="wallet__button" src={walletImage} alt=""/>
@@ -208,6 +209,7 @@ const App = (props) => {
       </div>
       <div className="mint__container">
         {
+          !canMint ? <img className="mint__button __right" src={soonImage} alt=""/> :
           isSoldOut ?
           <img className="mint__button __right" src={soldoutImage} alt=""/> :
           <img className="mint__button __left" onClick={mint} src={mintImage} alt=""/>
