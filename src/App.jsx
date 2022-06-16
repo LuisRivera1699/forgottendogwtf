@@ -192,25 +192,25 @@ const App = (props) => {
         }
       </div>
       <div className="rrss__container">
-        <a href="https://twitter.com/forgottendogwtf" target="_blank" rel="noreferrer"><img className="__rrss" src={twitterImage} alt=""/></a>
-        <a href="https://opensea.io/collection/forgottendog-wtf" target="_blank" rel="noreferrer"><img className="__rrss" src={openseaImage} alt=""/></a>
+        <a href="https://twitter.com/forgottendogwtf" target="_blank" rel="noreferrer"><img className="__rrss __left" src={twitterImage} alt=""/></a>
+        <a href="https://opensea.io/collection/forgottendog-wtf" target="_blank" rel="noreferrer"><img className="__rrss __right" src={openseaImage} alt=""/></a>
       </div>
       <div className="title__container">
         <img className="__title" src={titleImage} alt="" />
       </div>
       <div className="counter__container">
-        <img className="item__counter __minus" onClick={handleMinus} src={minusImage} alt=""/>
+        <img className="item__counter __minus __left" onClick={handleMinus} src={minusImage} alt=""/>
         <div className="number__box">
           <img className="item__counter __counter" src={counterImage} alt=""/>
           <span className="counter__text">{mintCounter}</span>
         </div>
-        <img className="item__counter __plus" onClick={handlePlus} src={plusImage} alt=""/>
+        <img className="item__counter __plus __right" onClick={handlePlus} src={plusImage} alt=""/>
       </div>
       <div className="mint__container">
         {
           isSoldOut ?
-          <img className="mint__button" src={soldoutImage} alt=""/> :
-          <img className="mint__button" onClick={mint} src={mintImage} alt=""/>
+          <img className="mint__button __right" src={soldoutImage} alt=""/> :
+          <img className="mint__button __left" onClick={mint} src={mintImage} alt=""/>
         }
         <img className="mint__info" src={infoImage} alt=""/>
       </div>

@@ -163,3 +163,13 @@ code {
   cursor: pointer;
   z-index: 1;
 }
+
+/* HOVER */
+
+.__left:hover {
+  transform: rotate(-10deg);
+}
+
+.__right:hover {
+  transform: rotate(10deg);
+}
