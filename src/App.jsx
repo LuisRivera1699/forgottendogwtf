@@ -52,6 +52,11 @@ const App = (props) => {
 
     if (accounts.length !== 0) {
       setCurrentAccount(accounts[0]);
+
+      let chainId = await ethereum.request({method: 'eth_chainId'});
+      if (chainId !== "0x1") {
+        alert("You are connected to another network. Please switch your Metamask to Ethereum Mainnet and update the page.");
+      }
     }
   }
 
@@ -67,6 +72,11 @@ const App = (props) => {
       const accounts = await ethereum.request({method: 'eth_requestAccounts'});
 
       setCurrentAccount(accounts[0]);
+
+      let chainId = await ethereum.request({method: 'eth_chainId'});
+      if (chainId !== "0x1") {
+        alert("You are connected to another network. Please switch your Metamask to Ethereum Mainnet and update the page.");
+      }
     } catch (error) {
       console.error(error);
     }
@@ -174,6 +184,11 @@ const App = (props) => {
     if (window.ethereum) {
       window.ethereum.on(
         'accountsChanged', () => {
+          window.location.reload();
+        }
+      );
+      window.ethereum.on(
+        'chainChanged', () => {
           window.location.reload();
         }
       );
