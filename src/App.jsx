@@ -152,7 +152,7 @@ const App = (props) => {
         }
 
         await mintTxn.wait();
-        alert('Congratulations! Forgotten Dog Minted, you can now see your Forgotten Dog on Opensea.');
+        alert(`Congratulations! Forgotten Dog Minted, you can now see your Forgotten Dog on Opensea. ${balance+mintCounter == 20 ? 'You have reached the max amount of Forgottend Dogs minted.' : `You can still mint another ${20 - (balance+mintCounter)} Forgotten Dogs.`}`);
         getMyBalance();
       } else if (!canMint) {
         alert(currentAccount ? 'Mint has not started yet!' : 'Wallet is not connected');
