@@ -224,10 +224,10 @@ const App = (props) => {
       </div>
       <div className="mint__container">
         {
-          !canMint ? <img className="mint__button __right" src={soonImage} alt=""/> :
+          !canMint ? <img className="mint__button __right" src={soldoutImage} alt=""/> :
           isSoldOut ?
           <img className="mint__button __right" src={soldoutImage} alt=""/> :
-          <img className="mint__button __left" onClick={mint} src={mintImage} alt=""/>
+          <img className="mint__button __left" onClick={mint} src={soldoutImage} alt=""/>
         }
         <img className="mint__info" src={infoImage} alt=""/>
       </div>
